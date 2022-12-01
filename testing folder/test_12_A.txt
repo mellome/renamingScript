@@ -1,0 +1,18 @@
+@echo off
+rem yhe
+setlocal EnableDelayedExpansion
+echo:
+set /p s = please input extensional name: 
+for /r %%i in (*.txt) do (
+	echo %%i
+	rem for /f %%f in ('dir /b *.txt') do (
+	for %%f in (*.txt) do (
+		echo %%f
+		rem set FileName = %%i
+		ren %%f !s!%%f
+	)
+	rem echo !FileName!
+	rem ren %%i %%~ni!_s!.txt
+)
+echo successfully！
+pause
